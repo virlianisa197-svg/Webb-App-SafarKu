@@ -1,0 +1,166 @@
+/* Safarku - style.css
+   Dipakai oleh: daftar.html, admin-dashboard.html (dan halaman lain yang memakai class sama) */
+
+:root{
+  --ink:#16302b;        /* teks utama, hijau tua hampir hitam */
+  --muted:#5b6f6a;      /* teks sekunder */
+  --bg:#f6f7f4;         /* latar halaman */
+  --surface:#ffffff;    /* kartu */
+  --line:#dde4e0;       /* garis tipis */
+  --green:#0f5c4d;      /* warna utama */
+  --green-dk:#0a463a;
+  --gold:#c99a2e;       /* aksen tombol */
+  --gold-dk:#a97f1f;
+  --ok:#1b7f4b;
+  --warn:#b4231a;
+  --radius:12px;
+  --fs:16px;            /* ukuran dasar; membesar di Mode Sederhana */
+}
+
+/* Mode Sederhana: tulisan besar untuk lansia */
+html.simple{--fs:20px}
+html.simple .btn,
+html.simple .in{min-height:56px}
+html.simple nav a,
+html.simple .side a{padding-top:14px;padding-bottom:14px}
+
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:var(--fs);-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-weight:400;
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--bg);
+}
+img{max-width:100%;height:auto}
+h1,h2,h3{margin:0 0 .4em;line-height:1.25;font-weight:800;letter-spacing:-.01em}
+h1{font-size:1.9rem}
+h3{font-size:1.05rem;font-weight:600}
+p{margin:0 0 .6em}
+a{color:var(--green)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+.skip{
+  position:absolute;left:12px;top:-60px;z-index:100;
+  background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;
+}
+.skip:focus{top:12px}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.sec{padding-top:40px;padding-bottom:56px}
+.sub{color:var(--muted);margin-bottom:24px;max-width:60ch}
+
+/* ---------- Header situs ---------- */
+.hd{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hd .wrap{display:flex;align-items:center;gap:16px;min-height:68px;flex-wrap:wrap}
+.hd nav{display:flex;align-items:center;gap:4px;flex:1}
+.hd nav a{
+  color:var(--ink);text-decoration:none;font-weight:600;
+  padding:10px 12px;border-radius:8px;
+}
+.hd nav a:hover{background:var(--bg)}
+.hd nav a.btn{padding:10px 18px;margin-left:8px}
+.sp{flex:1}
+.menu-btn{
+  display:none;margin-left:auto;
+  min-width:44px;min-height:44px;font-size:1.4rem;line-height:1;
+  background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink);cursor:pointer;
+}
+
+/* ---------- Tombol ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:12px 22px;
+  font:inherit;font-weight:600;text-decoration:none;
+  color:#fff;background:var(--green);
+  border:0;border-radius:var(--radius);cursor:pointer;
+}
+.btn:hover{background:var(--green-dk)}
+.btn.gold{background:var(--gold);color:#241a02}
+.btn.gold:hover{background:var(--gold-dk);color:#fff}
+.btn[disabled]{opacity:.6;cursor:not-allowed}
+
+/* ---------- Kartu & form ---------- */
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+}
+.card h3{margin-bottom:.2em}
+.card p:last-child{margin-bottom:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+
+.lb{display:block;margin:16px 0 6px;font-weight:600}
+.in{
+  display:block;width:100%;min-height:48px;padding:10px 14px;
+  font:inherit;color:var(--ink);background:#fff;
+  border:1.5px solid #b9c5c0;border-radius:10px;
+}
+.in::placeholder{color:#8a9a95}
+.in:focus{border-color:var(--green);outline:3px solid rgba(201,154,46,.45);outline-offset:0}
+.in[aria-invalid="true"]{border-color:var(--warn)}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--green)}
+
+.msg{
+  margin:12px 0 0;padding:12px 14px;border-radius:10px;
+  background:#e6f3ec;color:#14532d;font-weight:600;
+}
+.msg.err{background:#fbe9e7;color:var(--warn)}
+.msg[hidden]{display:none}
+
+/* ---------- Panel admin ---------- */
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.side{
+  background:var(--green);color:#fff;padding:24px 16px;
+  display:flex;flex-direction:column;gap:4px;
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+}
+.side .brand{font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
+.side small{display:block;margin-bottom:20px;color:#bfd8d1;font-weight:600;letter-spacing:.06em}
+.side a{
+  color:#e8f3f0;text-decoration:none;font-weight:600;
+  padding:11px 12px;border-radius:8px;min-height:44px;display:flex;align-items:center;
+}
+.side a:hover{background:rgba(255,255,255,.1)}
+.side a[aria-current="page"]{background:#fff;color:var(--green)}
+.main{padding:32px;min-width:0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:0 0 28px}
+.grid .card p{margin:0;color:var(--muted);font-weight:600}
+.stat{font-size:2.2rem!important;font-weight:800!important;line-height:1.1;margin-top:6px!important}
+
+.tbl{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);overflow-x:auto;
+}
+.tbl table{width:100%;border-collapse:collapse;min-width:520px}
+.tbl th,.tbl td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{font-weight:800;background:#eef3f0}
+.tbl tr:last-child td{border-bottom:0}
+
+/* ---------- Responsif ---------- */
+@media (max-width:860px){
+  .two{grid-template-columns:1fr}
+  .app{grid-template-columns:1fr}
+  .side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px;padding:14px}
+  .side .brand{width:100%}
+  .side small{width:100%;margin-bottom:8px}
+  .side a{flex:0 0 auto}
+  .main{padding:20px 16px}
+}
+@media (max-width:760px){
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+  .hd nav{
+    display:none;flex-basis:100%;flex-direction:column;align-items:stretch;
+    padding-bottom:14px;
+  }
+  .hd nav.open{display:flex}
+  .hd nav .sp{display:none}
+  .hd nav a.btn{margin:8px 0 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

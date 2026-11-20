@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masuk | Safarku</title>
+<meta name="description" content="Safarku: aplikasi travel umroh dan haji dengan panduan ibadah, navigasi offline, dan tombol SOS.">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#isi">Lewati ke isi</a>
+<header class="hd"><div class="wrap"><a href="index.html"><img src="assets/images/logo.svg" alt="Safarku" width="140" height="35"></a><button class="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false">&#9776;</button><nav aria-label="Menu utama"><a href="paket.html">Paket</a><a href="video.html">Panduan</a><a href="index.html#tentang">Tentang</a><a href="index.html#artikel">Artikel</a><a href="index.html#kantor">Kontak</a><span class="sp"></span><a href="masuk.html">Masuk</a><a class="btn gold" href="daftar.html">Konsultasi Gratis</a></nav></div></header><main id="isi"><div class="wrap sec"><div class="two" style="margin-top:0;align-items:stretch"><div class="card dark" style="padding:40px"><h2 style="font-size:30px">Selamat datang kembali</h2><p style="font-size:16px;margin-top:12px">Masuk untuk melihat jadwal, video panduan, dan titik kumpul rombongan Anda.</p></div><div class="card" style="padding:32px"><h1 style="font-size:26px">Masuk</h1><p class="mut" style="margin-top:6px">Gunakan nomor HP dan sandi yang terdaftar.</p>
+<form id="form-login" novalidate><fieldset><legend>Masuk sebagai</legend><div class="radios"><label><input type="radio" name="peran" value="jemaah" checked>Jemaah</label><label><input type="radio" name="peran" value="ketua">Ketua Kelompok</label><label><input type="radio" name="peran" value="pengelola">Pengelola Travel</label></div></fieldset>
+<label class="lb" for="hp">Nomor HP</label><input class="in" id="hp" name="hp" type="tel" autocomplete="tel" placeholder="[NOMOR HP]">
+<label class="lb" for="sandi">Sandi</label><input class="in" id="sandi" name="sandi" type="password" autocomplete="current-password" placeholder="[SANDI]">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px"><label style="display:inline-flex;gap:8px;align-items:center;min-height:44px;font-size:14px"><input type="checkbox">Ingat saya</label><a href="#">Lupa sandi?</a></div>
+<p class="err" id="login-error" role="alert"></p><button class="btn block" type="submit" style="margin-top:10px">Masuk</button></form>
+<p class="mut" style="margin-top:16px;text-align:center">Belum punya akun? <a href="daftar.html"><strong>Daftar</strong></a></p></div></div></div></main>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
